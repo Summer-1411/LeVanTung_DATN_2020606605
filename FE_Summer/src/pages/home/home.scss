@@ -1,0 +1,45 @@
+@import "../../style.scss";
+
+.home {
+    @include themify($themes) {
+        background-color: themed("bgSoft");
+        width: 100%;
+
+        .home-container {
+            background-color: themed("bg");
+            -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+
+            max-width: 100%;
+            margin: 0 auto;
+
+            @media (min-width: 768px) {
+                // Thiết bị máy tính bảng và lớn hơn
+                max-width: 80%;
+            }
+
+            .home-heading {
+
+                padding: 20px 10px;
+                border-bottom: 1px solid themed("border");
+
+                .home-title {
+                    font-size: 22px;
+                    font-weight: 900;
+                    color: themed("textColorSoft");
+                }
+
+                .home-manufacturer {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
+
+
+                }
+            }
+        }
+    }
+}

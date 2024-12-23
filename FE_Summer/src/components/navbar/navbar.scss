@@ -1,0 +1,226 @@
+@import "../../style.scss";
+
+.navbar {
+    @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        padding: 20px 0;
+        top: 0;
+        background-color: themed("bg");
+        color: themed("textColor");
+        z-index: 9;
+
+        @media (max-width: 576px) {
+            padding: 0;
+        }
+
+        .navbar-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+
+            .left {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                .logoApp {
+                    text-decoration: none;
+                    color: themed("logo");
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .result-searrch {
+                    background-color: white;
+                    border-radius: 6px;
+                    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.262);
+                    width: 616px;
+
+                    .productSearch-item {
+                        padding: 10px 20px;
+                        display: flex;
+                        cursor: pointer;
+                        align-items: center;
+                        color: black;
+                        text-decoration: none;
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.066);
+                        }
+
+                        .productSearch-item-img {
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .search {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    border: 1px solid themed("border");
+                    border-radius: 5px;
+                    height: 45px;
+                    position: relative;
+
+                    .clear,
+                    .loading {
+                        position: absolute;
+                        right: 10px;
+                        cursor: pointer;
+                    }
+
+                    .loading {
+                        animation: spinner 0.8s linear infinite;
+                        opacity: 0.5;
+                    }
+
+                    .search_input {
+                        border: none;
+                        outline: none;
+                        width: 400px;
+                        background-color: transparent;
+                        color: themed("textColor");
+
+                        // Ẩn thanh tìm kiếm trên màn hình mobile
+                        @include mobile {
+                            display: none;
+                        }
+
+                        @include tablet {
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .icon-cart {
+                    text-decoration: none;
+                    color: initial;
+                    position: relative;
+                    padding: 8px;
+
+                    .quantity-cart {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        top: -5px;
+                        right: -5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background-color: themed('colorPink');
+                        color: white;
+                    }
+                }
+
+                // // Ẩn các icon bên phải trong chế độ mobile
+                // @include mobile {
+                //     display: none;
+                // }
+                .user {
+                    display: flex;
+                    gap: 10px;
+                    font-weight: 500;
+                    align-items: center;
+                    text-decoration: none;
+                    color: inherit;
+
+                    // Ẩn thông tin người dùng trên tablet
+                    // @include tablet {
+                    //     display: none;
+                    // }
+
+
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    @media (max-width: 576px) {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Ẩn các phần tử cụ thể với class `.mobile-hide` trên mobile
+        @media (max-width: 768px) {
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .navbar-container {
+                padding: 10px 20px;
+
+                .left {
+                    gap: 15px;
+
+                    .logoApp {
+                        font-size: 18px;
+                    }
+                }
+
+                .right {
+                    gap: 15px;
+                }
+            }
+
+            // Xử lý responsive cho màn hình nhỏ hơn 576px
+            @media (max-width: 576px) {
+                .navbar-container {
+                    // flex-direction: column;
+                    // align-items: flex-start;
+
+                    .left {
+                        width: 100%;
+                        justify-content: space-between;
+
+                        .logoApp {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .right {
+                        width: 100%;
+                        justify-content: space-around;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

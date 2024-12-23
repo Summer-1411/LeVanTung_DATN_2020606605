@@ -1,0 +1,575 @@
+###
+GET http://localhost:6868/api/category
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlzQWRtaW4iOjAsImlhdCI6MTY4MTA1NTk5M30.bnD-lJ1J0Q0wOkP5Ng5vtzAy5M-C95hTZvg1OOTDUdk
+
+
+//Send OTP
+###
+POST http://localhost:6868/api/auth/send_otp
+Content-Type: application/json
+
+{
+    "email": "anhducle862002@gmail.com",
+    "username": "anhducle862002"
+}
+
+
+
+//Send OTP
+###
+POST http://localhost:6868/api/auth/register_otp
+Content-Type: application/json
+
+{
+    "email": "hungdzkk2002@gmail.com",
+    "password": "123456",
+    "username": "HungDZ",
+    "otp": "321261"
+}
+
+
+
+
+###
+POST http://localhost:6868/api/invoices/send_mail
+Content-Type: application/json
+
+{
+    "id": "47427759-9362-4f8e-bfe4-2d3733534e83",
+    "username": "Lê Văn Tùng",
+    "email": "levantung14112002@gmail.com",
+    "phone": "0373984007",
+    "address": "Ngõ 32/84/57 Đỗ Đức Dục Hà Nội",
+    "status": "Đã thanh toán",
+    "total": "100.000đ",
+    "createDate": "11/05/2002",
+    "products": [
+        {
+        "_id": 1234,
+        "name": "Iphone 15 Pro Max",
+        "category": "Black x 256GB",
+        "quantity": "1",
+        "price": "70.000đ",
+        "total": "70.000đ"
+        },
+        {
+        "_id": 3214,
+        "name": "Iphone 11 Pro Max",
+        "category": "Black x 256GB",
+        "quantity": "1",
+        "price": "30.000đ",
+        "total": "30.000đ"
+        }
+    ]
+}
+
+
+###
+POST http://localhost:6868/api/invoices/export_all
+Content-Type: application/json
+
+{
+    "invoices": [
+        {
+            "id": "47427759-9362-4f8e-bfe4-2d3733534e83",
+            "username": "Lê Văn Tùng",
+            "createDate": "11/05/2002",
+            "email": "levantung14112002@gmail.com",
+            "phone": "0373984007",
+            "address": "Ngõ 32/84/57 Đỗ Đức Dục Hà Nội",
+            "status": "Đã thanh toán",
+            "total": "100.000đ",
+            "products": [
+                {
+                    "_id": 1234,
+                    "name": "Iphone 15 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "70.000đ",
+                    "total": "70.000đ"
+                },
+                {
+                    "_id": 3214,
+                    "name": "Iphone 11 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "30.000đ",
+                    "total": "30.000đ"
+                }
+            ]
+        },
+        {
+            "id": "1afdd2fa-6353-437c-a923-e43baac506f4",
+            "username": "Lê Văn Tùng 1",
+            "createDate": "11/05/2002",
+            "email": "levantung14112002@gmail.com 1",
+            "phone": "0373984007",
+            "address": "Ngõ 32/84/57 Đỗ Đức Dục Hà Nội",
+            "status": "Đã thanh toán",
+            "total": "100.000đ",
+            "products": [
+                {
+                    "_id": 1234,
+                    "name": "Iphone 15 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "70.000đ",
+                    "total": "70.000đ"
+                },
+                {
+                    "_id": 3214,
+                    "name": "Iphone 11 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "30.000đ",
+                    "total": "30.000đ"
+                }
+            ]
+        },
+        {
+            "id": "59c216f8-7471-4ec2-a527-ab3641dc49aa",
+            "username": "Lê Văn Tùng 2",
+            "createDate": "11/05/2002",
+            "email": "levantung14112002@gmail.com 1",
+            "phone": "0373984007",
+            "address": "Ngõ 32/84/57 Đỗ Đức Dục Hà Nội",
+            "status": "Đã thanh toán",
+            "total": "100.000đ",
+            "products": [
+                {
+                    "_id": 1234,
+                    "name": "Iphone 15 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "70.000đ",
+                    "total": "70.000đ"
+                },
+                {
+                    "_id": 3214,
+                    "name": "Iphone 11 Pro Max",
+                    "category": "Black x 256GB",
+                    "quantity": "1",
+                    "price": "30.000đ",
+                    "total": "30.000đ"
+                }
+            ]
+        }
+    ]
+}
+
+###
+//Đăng ký
+POST http://localhost:6868/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "usertest11111@gmail.com",
+    "password": "123456",
+    "username": "Summer"
+}
+
+
+//Đăng nhập
+###
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin12345@gmail.com",
+    "password": "123456"
+}
+###
+GET http://localhost:6868/api/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3OTkzMzMyMX0.WsMzyoVbwermRpqjizQFtbPgXwHhaQYE2QLyUtCcwPo
+
+
+###
+GET http://localhost:6868/api/user/alluser?id=30
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxldmFudHVuZzE0MTEyMDAyQGdtYWlsLmNvbSIsIm90cCI6IjA5NzY1OCIsImlhdCI6MTcxNTI3NTAzNiwiZXhwIjoxNzE1Mjc1MDc2fQ.ZXoY3mO7hOWZZMt6yN_Atil1BfZjjHDr9QGQXRzWnDU
+###
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin12345@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:6868/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "daoquynanh@gmail.com",
+    "password": "123456"
+}
+
+
+
+
+
+//Cập nhật thông tin người dùng
+###
+PUT http://localhost:6868/api/user/update/27
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlzQWRtaW4iOjAsImlhdCI6MTY3ODgxNDk3N30.6Uf8qp4v22rLF6bNIcQ0bv6rqpVbUq4jTmobZjuJedU
+
+{
+    "username": "Update người khác",
+    "avatar": "123456",
+    "birthday": 2004
+}
+
+
+//Xoá người dùng
+###
+PUT http://localhost:6868/api/user/delete/28
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjgsImlzQWRtaW4iOjAsImlhdCI6MTY3ODgxNTMxOX0.DigTVavsIZqRt2oFx6-7OHE7fQ0tm19V353hMXiYpb4
+
+{
+    "deleted": 1
+}
+
+//Get ALL user
+###
+GET http://localhost:6868/api/user/alluser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODg2NzA3OH0.DkwthZ_rA0DPgr-GhLB5xfGa9TgvrRVY2cxTkNTLJzc
+
+
+###
+POST https://api-summer-shop.vercel.app/api/product/search
+Content-Type: application/json
+
+{
+    "sample": {
+        "name": " ",
+        "idCategory": "",
+        "idOwner": "",
+        "id": ""
+    },
+    "orders": {
+        "property": "",
+        "direction": ""
+    }
+}
+
+
+
+//Xoá người dùng
+###
+POST http://localhost:6868/api/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MzYyNDcyMX0.NxldlqNFhAcmcSH3QrDChuEZa4ClVkkN7TTO-BYsEFo
+
+{
+    "name": "New Product", 
+    "description": "hihi ", 
+    "information": "Máy mới 100%", 
+    "status": "Còn hàng", 
+    "img": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/v/_/v_ng_18.png", 
+    "id_owner": 2, 
+    "id_category": 1
+}
+
+//Xoá người dùng
+###
+PUT http://localhost:6868/api/product/update/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODgxNzAwNn0.Uv0hjCyuewE0_eWITKCeKq8AncT6-l0-Ny8Tn752G08
+
+{
+    "name": "iPhone XS", 
+    "description": "iPhone 6s", 
+    "information": "Máy mới 100% ", 
+    "status": "Còn hàng", 
+    "img": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/v/_/v_ng_18.png", 
+    "id_owner": 1, 
+    "id_category": 1
+}
+
+
+//Xoá người dùng
+###
+PUT http://localhost:6868/api/product/delete/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODgxNzAwNn0.Uv0hjCyuewE0_eWITKCeKq8AncT6-l0-Ny8Tn752G08
+
+{
+    "deleted": 1
+}
+
+
+
+###
+GET http://localhost:3000/api/product
+Content-Type: application/json  
+
+###
+GET http://localhost:6868/api/v1/product
+Content-Type: application/json
+
+
+###
+GET http://localhost:6868/api/v1/filter/infor/99
+Content-Type: application/json
+
+
+
+###
+POST  http://localhost:6868/api/v1/filter/detail
+Content-Type: application/json
+
+{
+    "id": 48,
+    "size": "128GB",
+    "color": "Silver"
+}
+
+
+
+###
+POST  http://localhost:6868/api/v1/user/filter
+Content-Type: application/json
+
+{
+"email": "user123@gmail.com"
+}
+
+
+
+//Thêm mới thông tin sản phẩm
+
+###
+POST http://localhost:6868/api/filter
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxldmFudHVuZzE0MTEyMDAyQGdtYWlsLmNvbSIsIm90cCI6IjA5NzY1OCIsImlhdCI6MTcxNTI3NDE0NywiZXhwIjoxNzE1Mjc3NzQ3fQ.cMgPWsksVy2c_inxc_hwSRCDsZdfahEN4tDpzTlt6O8
+
+{
+    "id_pro": 2, 
+    "size": "512GB", 
+    "color": "Black",
+    "quantity": 8,
+    "price": 9999
+}
+
+
+###
+PUT http://localhost:6868/api/filter/update/17
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODg2NzA3OH0.DkwthZ_rA0DPgr-GhLB5xfGa9TgvrRVY2cxTkNTLJzc
+
+{
+    "id_pro": 2, 
+    "size": "64GB", 
+    "color": "White",
+    "quantity": 2,
+    "price": 6868
+}
+###
+GET http://localhost:6868/api/v1/voucher/search
+Content-Type: application/json
+
+###
+GET http://localhost:6868/api/voucher/check/VOUCHER_99
+Content-Type: application/json
+
+
+
+
+###
+GET http://localhost:6868/api/producer
+Content-Type: application/json
+
+###
+POST http://localhost:6868/api/category/search
+Content-Type: application/json
+
+{
+    "status": "0"
+}
+
+
+
+
+###
+GET http://localhost:6868/api/filter/find/2
+Content-Type: application/json
+
+###
+GET http://localhost:6868/api/filter/details?idpro=2&size=128GB&color=Black
+Content-Type: application/json
+
+
+###
+GET http://localhost:6868/api/filter/searchsize?color=Black&idpro=2
+Content-Type: application/json
+
+###
+GET http://localhost:6868/api/filter/img?color=Black&idpro=2
+Content-Type: application/json
+
+###
+GET http://localhost:6868/api/filter/searchcolor?size=64GB&idpro=2
+Content-Type: application/json
+
+###
+GET http://localhost:6868/api/filter/details?size=128GB&idpro=2&color=Gold
+Content-Type: application/json
+
+
+//Tạo giỏ hàng mới cho người dùng
+###
+GET http://localhost:6868/api/cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlzQWRtaW4iOjAsImlhdCI6MTY4MTA1NTk5M30.bnD-lJ1J0Q0wOkP5Ng5vtzAy5M-C95hTZvg1OOTDUdk
+
+
+###
+POST http://localhost:6868/api/cart
+Content-Type: application/json
+
+{
+    "filter": 112,
+    "quantity": 2
+}
+
+
+//GET CART
+###
+PUT http://localhost:6868/api/cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MTA2MjM5NX0.EtrxEqCj5YCB9F-6uzcCCgI3MVh_9jSbye17yxylJEA
+
+{
+    "quantity": 99,
+    "id_filter": 10
+}
+###
+
+
+///Cart details
+###
+GET http://localhost:6868/api/cartdetail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlzQWRtaW4iOjAsImlhdCI6MTY3OTkzNjExN30.x6mClHjIoZE_gykdo_sCEfZqDZoHQ1I__J4sjNPEOpw
+###
+
+###
+PUT http://localhost:6868/api/cart
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlzQWRtaW4iOjAsImlhdCI6MTY3OTkzNjExN30.x6mClHjIoZE_gykdo_sCEfZqDZoHQ1I__J4sjNPEOpw
+###
+///Cart details
+###
+POST http://localhost:6868/api/cartdetail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsImlzQWRtaW4iOjAsImlhdCI6MTY3OTkzNjExN30.x6mClHjIoZE_gykdo_sCEfZqDZoHQ1I__J4sjNPEOpw
+
+{
+    "id_cart" : 2, 
+    "id_filter" : 8,
+    "quantity" : 3, 
+    "subtotal" : 3000
+}
+###
+
+
+
+###
+GET http://localhost:6868/api/order
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlzQWRtaW4iOjAsImlhdCI6MTY4MTIwNzg1NX0.Ez96r7tLmDB_cm3EH0-5W0caDLYkHEhmu4RabqX4BuM
+
+
+###
+GET http://localhost:6868/api/order/cancel
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MTIxMjcyNX0.0p5m8-68PMw1hoSEcX2GsBQrt0GmCY8CAXo6R1svmG8
+
+
+###
+GET http://localhost:6868/api/order_detail/8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlzQWRtaW4iOjAsImlhdCI6MTY4MTIwNzg1NX0.Ez96r7tLmDB_cm3EH0-5W0caDLYkHEhmu4RabqX4BuM
+
+###
+PUT http://localhost:6868/api/order/30
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MTIxMjcyNX0.0p5m8-68PMw1hoSEcX2GsBQrt0GmCY8CAXo6R1svmG8
+
+{
+    "id": 13
+}
+
+
+//Get đơn hàng by Admin
+###
+GET http://localhost:6868/api/order/byAdmin?success=true
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQsImlzQWRtaW4iOjAsImlhdCI6MTY4MTMyMjE1M30.a-BOhCvVDdF-HE8JJb48sw4bt-A8Mq4jRCv_2BTNRWQ
+
+
+//Get đơn hàng by Admin
+###
+PUT http://localhost:6868/api/order/byAdmin/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MTM5NjYzMn0.J9qDaIKoS5t70A7Kh5gWQ4k1GnCuPiktG6EONTIhtEE
+
+
+
+//GET ALL PRODUCT BY ADMIN
+//Xoá người dùng
+###
+GET http://localhost:6868/api/product/byAdmin?page=1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4MTM5NjYzMn0.J9qDaIKoS5t70A7Kh5gWQ4k1GnCuPiktG6EONTIhtEE
+
+//thống kê
+###
+
+GET http://localhost:6868/api/stat/sold/31
+Content-Type: application/json
+###
+
+GET http://localhost:6868/api/stat/bought/33
+Content-Type: application/json
+###
+GET http://localhost:6868/api/stat/stat-byUser/33
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4NDMzMTk3Mn0.jBKpZfW9w5gl5BaiEMaY_PSmkS6zhI8Fk3HGs9nEqBM
+###
+GET http://localhost:6868/api/stat/count
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY4NDMwNTMxNH0._mZUO9ghw-jtk3rD0bUFUPjwLx9xyzm2cpIfxIfwCiI
+
+
+
+###
+POST http://localhost:6868/api/feedback/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODg2NzA3OH0.DkwthZ_rA0DPgr-GhLB5xfGa9TgvrRVY2cxTkNTLJzc
+
+{
+    "idProduct": 34, 
+    "idOrder": 38, 
+    "rate": 5,
+    "description": "Sản phẩm tuyệt vời 23",
+    "img": "img.img"
+}
+
+###
+GET http://localhost:6868/api/feedback/by-product/26
+
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODg2NzA3OH0.DkwthZ_rA0DPgr-GhLB5xfGa9TgvrRVY2cxTkNTLJzc
+
+
+###
+GET http://localhost:6868/api/feedback/by-user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImlzQWRtaW4iOjEsImlhdCI6MTY3ODg2NzA3OH0.DkwthZ_rA0DPgr-GhLB5xfGa9TgvrRVY2cxTkNTLJzc

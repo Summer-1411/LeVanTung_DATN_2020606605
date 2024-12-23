@@ -1,0 +1,273 @@
+@import "../../style.scss";
+
+.productDetail-wrapper {
+    @include themify($themes) {
+        max-width: 1200px;
+        width: 100%;
+        margin: 20px auto;
+        background-color: themed("bg");
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+
+        .productDetail-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            /* Đảm bảo nội dung có thể wrap trên các thiết bị nhỏ */
+            gap: 20px;
+            /* Thêm khoảng cách giữa các phần tử */
+
+            .left {
+                flex: 4;
+                padding: 20px;
+
+                .main-img {
+                    width: 100%;
+                    padding-top: 100%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                }
+
+                .list-img {
+                    display: flex;
+                    flex-wrap: wrap;
+                    /* Đảm bảo các hình ảnh được wrap trên thiết bị nhỏ */
+                    gap: 10px;
+                    /* Thêm khoảng cách giữa các hình ảnh */
+
+                    .img-item {
+                        width: 20%;
+                        padding: 5px;
+
+                        .img-item-content {
+                            width: 100%;
+                            padding-top: 100%;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 50%;
+                            border: 1px solid transparent;
+
+                            &:hover {
+                                border: 1px solid #d0011b;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                flex: 6;
+                padding: 20px;
+
+                .heading {
+                    .name-product {
+                        font-size: 22px;
+                        color: themed("textBold");
+                        font-weight: 900;
+                        padding: 10px 0;
+                    }
+
+                    .info-product {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        font-size: 18px;
+
+                        .star {
+                            display: flex;
+                            align-items: center;
+
+                            .star-number {
+                                color: #d0011b;
+                            }
+
+                            .list-star {
+                                color: #d0011b;
+
+                                .icon-star {
+                                    width: 18px;
+                                    height: 18px;
+                                }
+                            }
+                        }
+
+                        .info-item {
+                            display: flex;
+                            align-items: center;
+
+                            .info-item-number {
+                                color: themed("textBold");
+                                padding-top: 3px;
+                                padding-right: 5px;
+                                border-bottom: 1px solid themed("border");
+                            }
+
+                            .info-item-title {
+                                color: themed("textBold");
+                            }
+                        }
+                    }
+                }
+
+                .price-product {
+                    font-size: 30px;
+                    color: #d0011b;
+                    font-weight: bold;
+                    padding: 15px 0;
+                }
+
+                .main {
+                    color: themed("textBold");
+
+                    .main-row {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 30px;
+                        flex-wrap: wrap;
+                        /* Đảm bảo nội dung wrap trên màn hình nhỏ */
+
+                        .row-title {
+                            font-size: 16px;
+                            color: themed("textBold");
+                            min-width: 110px;
+                        }
+
+                        .row-list-option {
+                            display: flex;
+                            flex-wrap: wrap;
+                            /* Cho phép wrap trên các thiết bị nhỏ */
+                            align-items: center;
+                            gap: 10px;
+                            /* Thêm khoảng cách giữa các tùy chọn */
+
+                            .option-item {
+                                cursor: pointer;
+                                min-width: 80px;
+                                min-height: 34px;
+                                padding: 0.25rem 0.75rem;
+                                margin: 0 8px 8px 0;
+                                color: rgba(0, 0, 0, 0.8);
+                                text-align: center;
+                                border-radius: 2px;
+                                border: 1px solid rgba(0, 0, 0, 0.09);
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                &:hover,
+                                &.active {
+                                    color: #d0011b;
+                                    border-color: #d0011b;
+                                }
+                            }
+                        }
+
+                        .main-row-content {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .row-content-left {
+                                display: flex;
+                                align-items: center;
+                                border: 1px solid #767676;
+
+                                .btn-icon {
+                                    padding: 0 15px;
+                                    cursor: pointer;
+                                }
+
+                                .input-number {
+                                    width: 50px;
+                                    height: 32px;
+                                    text-align: center;
+                                    border: 0;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bottom-productDetail {
+                    display: flex;
+                    flex-wrap: wrap;
+                    /* Cho phép wrap các nút khi không đủ không gian */
+                    gap: 15px;
+
+                    .btn {
+                        line-height: 48px;
+                        padding: 0 10px;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        /* Đảm bảo các nút chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+                        max-width: 200px;
+
+                        &.add-cart {
+                            color: #d0011b;
+                            border: 1px solid #d0011b;
+                            background-color: rgba(208, 1, 27, 0.08);
+                        }
+
+                        &.buy-now {
+                            color: white;
+                            border: 1px solid #d0011b;
+                            background-color: #d0011b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Breakpoint for tablets (768px and below)
+    @media (max-width: 768px) {
+        .productDetail-container {
+            flex-direction: column;
+            align-items: center;
+
+            .left,
+            .right {
+                flex: 1;
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .left {
+                width: 100%;
+            }
+
+            .bottom-productDetail .btn {
+                width: 100%;
+            }
+        }
+    }
+
+    // Breakpoint for mobile devices (480px and below)
+    @media (max-width: 480px) {
+        .productDetail-wrapper {
+            margin: 10px;
+
+            .price-product {
+                font-size: 24px;
+            }
+
+            .heading .name-product {
+                font-size: 18px;
+            }
+
+            .main-row .row-title {
+                font-size: 14px;
+                min-width: auto;
+            }
+
+            .bottom-productDetail .btn {
+                line-height: 40px;
+                max-width: 100%;
+            }
+        }
+    }
+}
