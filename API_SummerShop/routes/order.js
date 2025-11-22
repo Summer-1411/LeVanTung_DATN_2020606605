@@ -130,6 +130,12 @@ router.post('/', verifyToken, async (req, res) => {
         }
         else if (paymentMethod === '2') {
             console.log('check');
+            const items = products.map((item) => ({
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price,
+                unit: 'Sản phẩm'
+            }))
             const payload = {
                 orderCode: result.insertId,
                 amount: req.body.total,
@@ -138,7 +144,7 @@ router.post('/', verifyToken, async (req, res) => {
                 buyerEmail: '',
                 buyerPhone: phone,
                 buyerAddress: address,
-                items: products,
+                items: items,
 
             }
             const { data: dataResponse } = await axios.post('http://localhost:6868/api/payment/create-payment', payload, {
